@@ -1,0 +1,74 @@
+span:hover > i {
+	color: #242424;
+}
+.list{
+	/* height: max-content; */
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1.2rem;
+	padding: 1rem;
+	margin-bottom: 1rem;
+}
+.list > .activity-wrapper { 
+	flex: 1 0;
+	height: max-content;
+	position: relative;
+	z-index: 1;
+}
+.list > .activity-wrapper > #activity-input {
+	resize: none;
+	display: block;
+	width: 100%;
+	font-size: 1.6rem;
+	font-weight: 700;
+	border-bottom: 2px solid #232424;
+	overflow: hidden;
+	padding-bottom: 1.2rem;
+}
+.list > .activity-wrapper > #activity-input:focus {
+	outline: none;
+}
+.list > .activity-wrapper > #activity-input:hover + #edit-button {
+	opacity: 1;
+}
+.list > .activity-wrapper > #activity-input + #edit-button {
+	width: 40px;
+	height: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	right: 10px;
+	opacity: 0;
+}
+.list > .activity-wrapper > #activity-input + #edit-button:hover {
+	cursor: pointer;
+	opacity: 1;
+}
+.list > .activity-wrapper > #edit-button > #icon-edit {
+	font-size: 1.4rem;
+}
+
+.list > .activity-wrapper + .checkbox-day-wrapper {
+	width: 35%;
+}
+.checkbox-day-wrapper > .checkbox-day {
+	width: 40px;
+	height: 40px;
+	position: relative;
+	z-index: 1;
+}
+
+@media only screen and (width <= 800px) {
+	.list { flex-direction: column; }
+	.list > .activity-wrapper + .checkbox-day-wrapper {
+		width: 100%;
+	}
+	.list > .activity-wrapper {
+		flex: 0 0;
+		width: 100%;
+	}
+}
